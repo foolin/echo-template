@@ -336,3 +336,8 @@ See in "examples/multiple" folder
 ```
 
 [Multiple example](https://github.com/foolin/echo-template/tree/master/examples/multiple)
+
+# Relative Template
+
+- [Gin template](https://github.com/foolin/gin-template) The sample template for gin framework!
+
