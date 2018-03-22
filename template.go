@@ -7,8 +7,8 @@
  */
 
 /*
-Golang template for gin framework, Use golang html/template syntax,
-Easy and simple to use for gin framework, See https://github.com/foolin/gin-template
+Golang template for echo framework, Use golang html/template syntax,
+Easy and simple to use for gin framework, See https://github.com/foolin/echo-template
 for more information.
 */
 package echotemplate
