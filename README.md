@@ -324,7 +324,7 @@ Project structure:
             |--- head.html
             |--- master.html
         |-- partials/
-        |--- ad.html
+            |--- ad.html
     |-- backend/
         |--- index.html
         |-- layouts/
