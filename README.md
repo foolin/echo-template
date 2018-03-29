@@ -372,14 +372,12 @@ func main() {
 
 	// Routes
 	e.GET("/", func(c echo.Context) error {
-		//render with master
 		return c.Render(http.StatusOK, "index", echo.Map{
 			"title": "Index title!",
 		})
 	})
 
 	e.GET("/block", func(c echo.Context) error {
-		//render only file, must full name with extension
 		return c.Render(http.StatusOK, "block", echo.Map{"title": "Block file title!!"})
 	})
 
@@ -399,7 +397,7 @@ Project structure:
     |-- layouts/
         |--- master.html
         
-See in "examples/multiple" folder
+See in "examples/block" folder
 ```
 
 [Block example](https://github.com/foolin/echo-template/tree/master/examples/block)
