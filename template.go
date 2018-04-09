@@ -41,6 +41,12 @@ type TemplateConfig struct {
 	Partials     []string         //template partial, such as head, foot
 	Funcs        template.FuncMap //template functions
 	DisableCache bool             //disable cache, debug mode
+	Delims       Delims           //delimeters
+}
+
+type Delims struct {
+	Left  string
+	Right string
 }
 
 func New(config TemplateConfig) *TemplateEngine {
@@ -59,6 +65,7 @@ func Default() *TemplateEngine {
 		Partials:     []string{},
 		Funcs:        make(template.FuncMap),
 		DisableCache: false,
+		Delims:       Delims{Left: "{{", Right: "}}"},
 	})
 }
 
@@ -114,7 +121,7 @@ func (e *TemplateEngine) executeTemplate(out io.Writer, name string, data interf
 		tplList = append(tplList, e.config.Partials...)
 
 		// Loop through each template and test the full path
-		tpl = template.New(name).Funcs(allFuncs)
+		tpl = template.New(name).Funcs(allFuncs).Delims(e.config.Delims.Left, e.config.Delims.Right)
 		for _, v := range tplList {
 			// Get the absolute path of the root template
 			path, err := filepath.Abs(e.config.Root + string(os.PathSeparator) + v + e.config.Extension)
