@@ -24,6 +24,7 @@ import (
 	"strings"
 	"sync"
 	"github.com/labstack/echo"
+	"github.com/GeertJohan/go.rice"
 )
 
 const templateEngineKey = "echo-template_templateEngine"
@@ -35,7 +36,7 @@ type TemplateEngine struct {
 }
 
 type TemplateConfig struct {
-	Root         string           //view root
+	Root         interface{}      //view root
 	Extension    string           //template extension
 	Master       string           //template master
 	Partials     []string         //template partial, such as head, foot
@@ -123,14 +124,33 @@ func (e *TemplateEngine) executeTemplate(out io.Writer, name string, data interf
 		// Loop through each template and test the full path
 		tpl = template.New(name).Funcs(allFuncs).Delims(e.config.Delims.Left, e.config.Delims.Right)
 		for _, v := range tplList {
-			// Get the absolute path of the root template
-			path, err := filepath.Abs(e.config.Root + string(os.PathSeparator) + v + e.config.Extension)
-			if err != nil {
-				return fmt.Errorf("TemplateEngine path:%v error: %v", path, err)
-			}
-			data, err := ioutil.ReadFile(path)
-			if err != nil {
-				return fmt.Errorf("TemplateEngine render read name:%v, path:%v, error: %v", v, path, err)
+			var (
+				data []byte
+				path string
+				err  error
+			)
+			switch e.config.Root.(type) {
+			case string:
+				// Get the absolute path of the root template
+				root := e.config.Root.(string)
+				path, err = filepath.Abs(root + string(os.PathSeparator) + v + e.config.Extension)
+				if err != nil {
+					return fmt.Errorf("TemplateEngine path:%v error: %v", path, err)
+				}
+				data, err = ioutil.ReadFile(path)
+				if err != nil {
+					return fmt.Errorf("TemplateEngine render read name:%v, path:%v, error: %v", v, path, err)
+				}
+			case *rice.Box:
+				// Get the path of the root template
+				box := e.config.Root.(*rice.Box)
+				path = "rice://" + box.Name() + "/" + v + e.config.Extension
+				data, err = box.Bytes(v + e.config.Extension)
+				if err != nil {
+					return fmt.Errorf("TemplateEngine render read name:%v, path:%v, error: %v", v, path, err)
+				}
+			default:
+				return fmt.Errorf("TemplateEngine unsupported root type (must be string or rice.Box)")
 			}
 			var tmpl *template.Template
 			if v == name {
