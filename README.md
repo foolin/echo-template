@@ -15,7 +15,7 @@ Golang template for [echo framework](https://github.com/labstack/echo)!
 * Support include file.
 * Support dynamic reload template(disable cache mode).
 * Support multiple templates for fontend and backend.
-* Support [go.rice](https://github.com/GeertJohan/go.rice) add all resource files to a executable.
+* Support [go.rice](https://github.com/foolin/echo-template/tree/master/supports/gorice) add all resource files to a executable.
 
 # Docs
 See https://www.godoc.org/github.com/foolin/echo-template
@@ -483,6 +483,11 @@ See in "examples/gorice" folder
 ```
 
 [gorice example](https://github.com/foolin/echo-template/tree/master/examples/gorice)
+
+
+# Supports
+
+- [go.rice](https://github.com/foolin/echo-template/supports/gorice)
 
 # Relative Template
 

@@ -39,8 +39,6 @@ func main() {
 
 # Links
 
-[echo template](https://github.com/foolin/gin-template)
-
-[echo framework](https://github.com/labstack/echo)
-
-[go.rice](https://github.com/GeertJohan/go.rice)
+- [echo template](https://github.com/foolin/echo-template)
+- [echo framework](https://github.com/labstack/echo)
+- [go.rice](https://github.com/GeertJohan/go.rice)
