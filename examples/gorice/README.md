@@ -24,6 +24,6 @@ http://127.0.0.1:9090
 # Links
 
 - [echo template](https://github.com/foolin/echo-template)
-- [go.rice](https://github.com/foolin/echo-template/tree/master/supports/gorice)
+- [echo-template support go.rice](https://github.com/foolin/echo-template/tree/master/supports/gorice)
 - [echo framework](https://github.com/labstack/echo)
 - [go.rice](https://github.com/GeertJohan/go.rice)
