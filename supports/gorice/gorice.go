@@ -25,7 +25,6 @@ func NewWithConfig(viewsRootBox *rice.Box, config echotemplate.TemplateConfig) *
 
 func GoRiceFileHandler() echotemplate.FileHandler {
 	return func(config echotemplate.TemplateConfig, tplFile string) (content string, err error) {
-		println("GoRice => ", tplFile)
 		// find a rice.Box
 		templateBox, err := rice.FindBox(config.Root)
 		if err != nil {
