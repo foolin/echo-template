@@ -487,7 +487,7 @@ See in "examples/gorice" folder
 
 # Supports
 
-- [go.rice](https://github.com/foolin/echo-template/supports/gorice)
+- [go.rice](https://github.com/foolin/echo-template/tree/master/supports/gorice)
 
 # Relative Template
 
