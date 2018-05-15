@@ -2,18 +2,29 @@
 Exmaple for echo template
 
 
-# Install rice tool
+# Install
 ```go
-go get github.com/GeertJohan/go.rice/rice
+go get github.com/GeertJohan/go.rice
 ```
 
 # Build & Run
+
+```bash
+
+#build
+go build -o bin/gorice
+
+#run
+./bin/gorice
+
+```
+
+# Script
 ```bash
 
 ./run.sh
 
 ```
-
 
 # View
 Use the browser to visit the following url：
