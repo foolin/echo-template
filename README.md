@@ -33,7 +33,7 @@ go get github.com/foolin/echo-template
 package main
 
 import (
-	"github.com/labstack/echo/v4/"
+	"github.com/labstack/echo/v4"
 	"github.com/foolin/echo-template"
 	"net/http"
 )
@@ -107,7 +107,7 @@ package main
 
 import (
 	"net/http"
-	"github.com/labstack/echo/v4/"
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/foolin/echo-template"
 )
@@ -173,7 +173,7 @@ import (
 	"net/http"
 	"html/template"
 	"time"
-	"github.com/labstack/echo/v4/"
+	"github.com/labstack/echo/v4"
 	"github.com/foolin/echo-template"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -255,7 +255,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/labstack/echo/v4/"
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/foolin/echo-template"
 )
@@ -365,7 +365,7 @@ package main
 
 import (
 	"net/http"
-	"github.com/labstack/echo/v4/"
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/foolin/echo-template"
 )
@@ -431,7 +431,7 @@ package main
 
 import (
 	"net/http"
-	"github.com/labstack/echo/v4/"
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/GeertJohan/go.rice"
 	"github.com/foolin/echo-template/supports/gorice"

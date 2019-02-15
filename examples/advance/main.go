@@ -12,7 +12,7 @@ import (
 	"net/http"
 	"html/template"
 	"time"
-	"github.com/labstack/echo/v4/"
+	"github.com/labstack/echo/v4"
 	"github.com/foolin/echo-template"
 	"github.com/labstack/echo/v4/middleware"
 )

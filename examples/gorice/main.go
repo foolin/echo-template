@@ -10,7 +10,7 @@ package main
 
 import (
 	"net/http"
-	"github.com/labstack/echo/v4/"
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/GeertJohan/go.rice"
 	"github.com/foolin/echo-template/supports/gorice"
