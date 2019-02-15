@@ -11,7 +11,7 @@ Golang template for echo framework, Use golang html/template syntax,
 Easy and simple to use for echo framework, See https://github.com/foolin/echo-template
 for more information.
 */
-package echotemplate
+package echotemplate // import "github.com/foolin/echo-template"
 
 import (
 	"bytes"
@@ -23,11 +23,13 @@ import (
 	"path/filepath"
 	"strings"
 	"sync"
-	"github.com/labstack/echo"
+
+	"github.com/labstack/echo/v4"
 )
 
 const templateEngineKey = "echo-template_templateEngine"
 
+// DefaultConfig defines the default settings for templating
 var DefaultConfig = TemplateConfig{
 	Root:         "views",
 	Extension:    ".html",
