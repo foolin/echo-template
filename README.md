@@ -4,6 +4,10 @@
 
 Golang template for [echo framework](https://github.com/labstack/echo)!
 
+**Deprecated!!!**
+
+Please consider trying to migrate to [Goview](https://github.com/foolin/goview)
+
 # Goview
 [Goview](https://github.com/foolin/goview) is a lightweight, simple and easy template library based on golang html/template for building Go web application. Please consider trying to migrate to [Goview](https://github.com/foolin/goview). 
 
